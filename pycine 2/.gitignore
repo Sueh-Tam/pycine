@@ -1,0 +1,5 @@
+envi_py
+__pycache__
+*.py[cod]
+
+instance/imdb.db
