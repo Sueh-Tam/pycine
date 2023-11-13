@@ -2,7 +2,7 @@
     let filmesFavoritos = [];
   
     async function fetchFavoritos(){
-      const response = await fetch('http://127.0.0.1:5000/filmesFavoritos');
+      const response = await fetch('http://127.0.0.1:8000/filmesFavoritos');
       if(response.ok){
         filmesFavoritos = await response.json();
         console.log(filmesFavoritos);
@@ -12,7 +12,7 @@
     }
   
     async function removerFavorito(id){
-      const response = await fetch(`http://127.0.0.1:5000/deletar/${id}`, {
+      const response = await fetch(`http://127.0.0.1:8000/deletar/${id}`, {
         method: 'DELETE',
       });
 
