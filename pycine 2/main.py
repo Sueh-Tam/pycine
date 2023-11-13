@@ -32,11 +32,11 @@ class FilmeFavorito(Base):
     idFilme = Column(Integer)
 
 class FilmeFavoritoCreate(BaseModel):
-    idFilme: int
+    id_filme: int
 
 @app.get("/")
 def hello_world():
-    #Base.metadata.create_all(bind=engine)
+    Base.metadata.create_all(bind=engine)
     
     return "Banco de dados criado com sucesso"
 
@@ -65,9 +65,9 @@ async def filmes_populares():
 
 @app.post("/adicionar_favorito", response_model=dict)
 def adicionar_favorito(filme: FilmeFavoritoCreate):
-
+    
     db = SessionLocal()
-    idFilme = filme.idFilme
+    idFilme = filme.id_filme
 
     filme_existente = db.query(FilmeFavorito).filter_by(idFilme=idFilme).first()
 
@@ -85,20 +85,23 @@ def adicionar_favorito(filme: FilmeFavoritoCreate):
 async def get_favoritos():
     db = SessionLocal()
     filmes_favoritos = db.query(FilmeFavorito).all()
+   
     db.close()
 
     vet_filmes_favoritos = []
-
+    
     for filme_favorito in filmes_favoritos:
-        filme_info = getMovieById(filme_favorito.idFilme)
+        filme_info = await getMovieById(filme_favorito.idFilme)
+        
         vet_filmes_favoritos.append({
             'id': filme_favorito.id,
-            'titulo': filme_info.titulo,
-            'sinopse': filme_info.overview,
-            'popularidade': filme_info.get('popularity')
+            'titulo': filme_info['titulo'],
+            'sinopse': filme_info['sinopse'],
+            'popularidade': filme_info['popularidade']
         })
 
     return vet_filmes_favoritos
+
 
 async def getMovieById(filme_id: int):
     endpoint = f'/movie/{filme_id}'
