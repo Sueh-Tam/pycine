@@ -3,7 +3,7 @@
   let filmes = [];
   
   async function fetchFilmes(){
-    const response = await fetch('http://127.0.0.1:5000/filmes');
+    const response = await fetch('http://127.0.0.1:8000/filmes-populares');
     if(response.ok){
       filmes = await response.json();
     }else{
@@ -13,7 +13,7 @@
 
   async function adicionarOuRemoverFavorito(filme) {
   const data = { id_filme: filme.id };
-  const response = await fetch('http://127.0.0.1:5000/adicionar_favorito', {
+  const response = await fetch('http://127.0.0.1:8000/adicionar_favorito', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
