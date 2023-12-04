@@ -29,7 +29,8 @@
   
     fetchFavoritos();
   </script>
-  
+  <h1><a href="/">Página inicial</a></h1>
+  <h1><a href="/filmesPopulares">Filmes populares</a></h1>
   <table>
     <thead>
       <tr>

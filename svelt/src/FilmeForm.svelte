@@ -33,11 +33,12 @@
   fetchFilmes();
 </script>
 <div>
-  <h1>Página Inicial</h1>
+  <h1><a href="/">Página Inicial</a></h1>
   <p>Clique no link abaixo para ver os favoritos:</p>
-  <h1>
-    <a href="/favoritos">Favoritos</a>
+  <h1 style="display: inline-block;">
+    <a href="/favoritos">Filmes favoritos</a>
   </h1>
+  
 </div>
 <table>
   <thead>
