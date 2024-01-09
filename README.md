@@ -6,7 +6,7 @@ My project is a web application built with laravel. My project allows users to m
 How to build the project:<br>
 
 Tou build this project you will need to have PHP and MySQL, in you machine;<br>
-In the **.env** file, make this changes:<br>
+Copy the file named **.env.example** and paste it, rename the file to **.env**, and make this changes:<br>
 1º - put the name of the database in the DB_DATABASE=<br>
 2º - put the username in the DB_USERNAME=<br>
 3º - put the password of the database in the DB_PASSWORD=<br>
