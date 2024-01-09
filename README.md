@@ -12,6 +12,6 @@ In the **.env** file, make this changes:<br>
 3º - put the password of the database in the DB_PASSWORD=<br>
 <br>
 After that, run the commands bellow: <br>
-**php artisan migrate**<br>
-**php artisan db:seed**<br>
-**php artisan serve**<br>
+1º **php artisan migrate**<br>
+2º **php artisan db:seed**<br>
+3º **php artisan serve**<br>
