@@ -10,4 +10,7 @@ In the **.env** file, make this changes:
 2º - put the username in the DB_USERNAME=
 3º - put the password of the database in the DB_PASSWORD=
 
-After that, run the command: **php artisan migrate** and **php artisan serve**
+After that, run the commands bellow: 
+**php artisan migrate**  
+**php artisan db:seed** 
+**php artisan serve**
